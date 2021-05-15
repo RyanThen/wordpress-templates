@@ -1,6 +1,6 @@
 # Sales Page WordPress Template
 
-A repository for files associated with this Sales Page WordPress Template.  A live demo of this template can be found <a href="https://www.hondros.com/programs/real-estate-salesperson/ohio/pre-licensing/">here</a>.
+A repository for files associated with this Sales Page WordPress Template.  A live demo of this template can be found <a href="https://www.hondros.com/programs/real-estate-salesperson/ohio/pre-licensing/" target="_blank">here</a>.
 
 <!-- ## Description
 
