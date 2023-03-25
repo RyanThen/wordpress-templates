@@ -11,20 +11,24 @@ get_header(); ?>
 
 
 <style>
-  /* Global Resets */
+
+  /* Page styling */
   body { font-size: 1.6rem; }
+  section { border-bottom: none; }
+
 
   /* Hero Section */
   .hero-section { margin-top: 10px; padding-block: 55px 60px; background-size: cover; background-repeat: no-repeat !important; }
   .hero-content-left { width: min(100%, 690px); margin-right: auto; }
-  .page-title { font-size: 3.4rem; margin-bottom: 20px; }
-  .page-sub-title { margin-block: 20px 15px; font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 1.8rem; font-weight: 400; }
+  .page-title { font-size: 3.4rem; margin-bottom: 5px; }
+  .page-sub-title { margin-block: 5px 10px; font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 1.8rem; font-weight: 400; color: #13284b; }
   .btn-fp { display: inline-block; margin-block: 15px; padding: 10px 15px; color: #FFFFFF; font-size: 1.8rem; background-color: #E05728; border: 2px solid #E05728; border-radius: 6px; transition: color 350ms, background-color 350ms; }
   .btn-fp:hover { color: white; background-color: #f0673a; transition: color 350ms, background-color 350ms; }
   .hero-btn:not(:first-of-type) { margin-left: 20px; color: #E05728; background-color: white; transition: color 350ms, background-color 350ms; }
   /* .hero-btn:not(:first-of-type):hover { color: white; background-color: #f0673a; transition: color 350ms, background-color 350ms;  } */
   .hero-btn i { font-size: 1.6rem; transition: transform 300ms; }
   .hero-btn:hover i { transform: translateX(4px); transition: transform 300ms; }
+
 
   /* Icon Blocks Section */
   .intro-icons-container { padding-block: 5px 0; border-bottom: none; margin-bottom: 20px; }
@@ -39,6 +43,7 @@ get_header(); ?>
   .icon-block-title { margin-bottom: 0; font-weight: 700; color: #13284b; }
   .icon-block-title, .icon-block-content { font-family: 'Open Sans', Arial, Helvetica, sans-serif; font-size: 1.7rem; line-height: 22px; }
   .icon-block-content { color: #1f262d; }
+
 
   /* Tabs Section */
   .tabs-component-section { margin-bottom: 25px; }
@@ -55,10 +60,6 @@ get_header(); ?>
   .active-tab { color: #E05728; border-bottom: 2px solid #E05728; transition: color 300ms ease-in-out; }
   .d-block { display: block !important; }
 
-  /* Horizontal Rule Block */
-  .horizontal-rule hr { margin-block: 25px; background-image: none; }
-  .horizontal-rule--dark hr { background-color: #666666; }
-  .horizontal-rule--light hr { background-color: lightgrey; }
 
   /* Product Packages */
   .cre__component-container--outer { position: relative; padding-block: 0; margin-bottom: 15px; }
@@ -350,14 +351,22 @@ get_header(); ?>
   .cre__grid-cta-preview-link { font-size: 18px; font-weight: 700; color: #0d6e9e; padding: 4px; transition: 350ms; }
   .cre__grid-cta-preview-link:hover { color: #243065; transition: 350ms; }
 
+
+  /* Horizontal Rule Block */
+  .horizontal-rule hr { margin-block: 25px; background-image: none; }
+  .horizontal-rule--dark hr { background-color: #666666; }
+  .horizontal-rule--light hr { background-color: lightgrey; }
+
   @media(max-width: 1024px) {
     .intro-icons-wrap { gap: 40px; }
     .icon-block-content { max-width: 260px; }
   }
 
-  /* Mobile / Tablet */
+  /* Tablet / Mobile */
   @media(max-width: 875px) {
     .tab { padding: 15px; }
+
+    .cre__component-container--outer { padding-top: 30px; }
 
     .cre__carousel-arrow { display: flex; position: absolute; top: 165px; font-size: 50px; color: #32a0d1; opacity: 0.6; cursor: pointer; z-index: 99; }
     .cre__carousel-arrow i { padding: 5px; }
@@ -365,11 +374,15 @@ get_header(); ?>
     .cre__mobile-next { right: 5px; }
     
     .cre__grid-area { border-left: none; border-right: none; }
+
+    .cre__grid-top-left { display: none; }
+    .cre__grid-bottom-left { display: none; }
+    .cre__value-prop-container { display: none; }
     
     .cre__package-highlight.cre__grid-card .cre__card-container { border-left: none; border-right: none; }
     .cre__package-highlight.cre__grid-cta { border-bottom: none; }
     
-    .cre__value-prop-item { width: 95vw; padding: 12px 15px; justify-content: space-between; align-items: flex-start; }
+    .cre__value-prop-item { width: 100%; padding: 12px 15px; justify-content: space-between; align-items: flex-start; }
     .cre__value-prop-item-icon { padding-right: 5px; }
     .cre__value-prop--clickable {  }
     .cre__value-prop-item .cre__value-prop-container--inner { display: block; width: 100%; }
@@ -379,10 +392,11 @@ get_header(); ?>
     .cre__grid-card { width: 65%; min-width: 245px; margin: 0 auto 20px auto; border-radius: 10px; box-shadow: 0px 0px 12px 5px lightgrey; }
     .cre__card-container { display: flex; flex-direction: column; border: none; }
     
-    .cre__card-icon-container { order: 3; padding: 25px 0; }
+    /* .cre__card-icon-container { order: 3; padding: 25px 0; } */
     .cre__card-icon-container i { font-size: 48px; }
     .cre__card-content-container { order: 1; }
     .cre__card-title { font-size: 20px; }
+    .cre__card-payment-details { order: 3; padding-block: 20px 15px; }
     .cre__btn-container--card { order: 4; }
     .cre__btn--card { width: 75%; }
     
@@ -401,9 +415,9 @@ get_header(); ?>
     .cre__grid-area:not(.cre__mobile-package-show) { opacity: 0; position: absolute; z-index: -1; }
     .cre__mobile-package-show { opacity: 1; transition: 500ms; }
     
-    .main-grid-container { grid-template-columns: 1fr; justify-content: start; }
-  }
-    
+    .cre__component-container--outer .main-grid-container { grid-template-columns: auto; }
+  } 
+
   /* Tablet Only */
   @media(max-width: 875px) and (min-width: 600px) {
     .cre__grid-card { width: 50%; }
@@ -412,54 +426,66 @@ get_header(); ?>
     .cre__btn--grid-bottom { width: 50%; }
   }
 
+  /* Mobile */
   @media(max-width: 650px) {
     .hero-section { padding-block: 20px 25px; }
-    .hero-button-group .hero-btn { display: block; width: 75%; margin-inline: auto; }
+    .hero-button-group { margin-top: 30px; }
+    .hero-button-group .hero-btn { display: block; width: 70%; margin-right: auto; }
+    .hero-btn:not(:first-of-type) { margin-left: 0; }
   }
 
   @media(max-width: 600px) {
-    /* sticky nav on mobile */
+    .hero-button-group .hero-btn { width: 80%; margin-inline: auto; }
+    .hero-btn i { display: none; }
+
+      /* sticky nav on mobile */
     div.tab-title-wrap { position: sticky; top: 0; z-index: 999; background-color: white; box-shadow: 0px 12px 20px -20px grey; }
     .tab-title { font-size: 20px; word-break: normal; word-wrap: normal; }
-    /* horizontal scroll on mobile */
+      /* horizontal scroll on mobile */
     .scroll { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; -ms-overflow-style: -ms-autohiding-scrollbar; }
+  }
+
+  @media(max-width: 390px) {
+    .hero-button-group .hero-btn { width: 95%; }
   }
 
 </style>
 
+
 <?php if( have_rows('sell_page_flexible_content') ): // START FLEXIBLE TEMPLATE ?>
   <?php while( have_rows('sell_page_flexible_content') ): the_row(); ?>
 
-    <?php if( get_row_layout() == 'hero_section_sp' ): // HERO SECTION ?>
+
+    <?php if( get_row_layout() == 'hero_section_sp' ): // Hero Section ?>
 
       <section class="hero-section" style="background: url('<?php echo get_sub_field('hero_background_image_sp')['url']; ?>')">
         <div class="container hero-container">
 
-        <?php if(get_sub_field('hero_primary_headline_sp') || get_sub_field('hero_secondary_headline_sp')) : ?>
-        <div class="hero-content hero-content-left">
+          <?php if( get_sub_field('hero_primary_headline_sp') || get_sub_field('hero_secondary_headline_sp') ) : ?>
+            <div class="hero-content hero-content-left">
 
-          <?php if(get_sub_field('hero_primary_headline_sp')) : ?>
-            <h1 class="page-title"><?php the_sub_field('hero_primary_headline_sp'); ?></h1>
-          <?php endif; ?>
+              <?php if( get_sub_field('hero_primary_headline_sp') ) : ?>
+                <h1 class="page-title"><?php the_sub_field('hero_primary_headline_sp'); ?></h1>
+              <?php endif; ?>
 
-          <?php if(get_sub_field('hero_secondary_headline_sp')) : ?>
-            <h4 class="page-sub-title"><?php the_sub_field('hero_secondary_headline_sp'); ?></h4>
-          <?php endif; ?>
+              <?php if(get_sub_field('hero_secondary_headline_sp')) : ?>
+                <div class="page-sub-title"><?php the_sub_field('hero_secondary_headline_sp'); ?></div>
+              <?php endif; ?>
 
-          <?php if( have_rows('hero_buttons_sp') ): ?>
-          <div class="hero-button-group">
+              <?php if( have_rows('hero_buttons_sp') ): ?>
+                <div class="hero-button-group">
+                  <?php while( have_rows('hero_buttons_sp') ) : the_row(); ?>
+                    <a class="hero-btn btn-fp text-center" href="<?php the_sub_field('hero_button_url_sp'); ?>">
+                      <?php the_sub_field('hero_button_text_sp'); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </a>
+                  <?php endwhile; ?>
+                </div>
+              <?php endif ?>
 
-            <?php while( have_rows('hero_buttons_sp') ) : the_row(); ?>
-              <a class="hero-btn btn-fp text-center" href="<?php the_sub_field('hero_button_url_sp'); ?>"><?php the_sub_field('hero_button_text_sp'); ?> <i class="fa fa-chevron-right" aria-hidden="true"></i>
-  </a>
-            <?php endwhile; ?>
-            
-          </div>
-          <?php endif ?>
+            </div>
+          <?php endif; // end hero content (title, subtitle, buttons) conditional ?>
 
         </div>
-        <?php endif; ?>
-
       </section>
 
 
@@ -467,255 +493,260 @@ get_header(); ?>
 
       <section class="container intro-icons-container">
         <?php if( get_sub_field('icon_blocks_primary_headline_sp') || get_sub_field('icon_blocks_secondary_headline_sp') ): ?>
-        <div class="icon-blocks-headline-container">
-          <?php if( get_sub_field('icon_blocks_primary_headline_sp') ): ?>
-          <h3 class="icon-blocks-primary-headline"><?php the_sub_field('icon_blocks_primary_headline_sp'); ?></h3>
-          <?php endif; ?>
-          <?php if( get_sub_field('icon_blocks_secondary_headline_sp') ): ?>
-          <p class="icon-blocks-secondary-headline"><?php the_sub_field('icon_blocks_secondary_headline_sp'); ?></p>
-          <?php endif; ?>
-        </div>
+          <div class="icon-blocks-headline-container">
+            <?php if( get_sub_field('icon_blocks_primary_headline_sp') ): ?>
+              <h3 class="icon-blocks-primary-headline"><?php the_sub_field('icon_blocks_primary_headline_sp'); ?></h3>
+            <?php endif; ?>
+            <?php if( get_sub_field('icon_blocks_secondary_headline_sp') ): ?>
+              <p class="icon-blocks-secondary-headline"><?php the_sub_field('icon_blocks_secondary_headline_sp'); ?></p>
+            <?php endif; ?>
+          </div>
         <?php endif; ?>
         
         <?php if( have_rows('icon_blocks_sp') ): ?>
-        <div class="intro-icons-wrap">
-          <?php while ( have_rows('icon_blocks_sp') ) : the_row(); ?>
-            <div class="icon-block-wrap">
-              <?php if(get_sub_field('icon_block_image_sp')): ?>
-              <img class="icon-block-graphic" src="<?php echo get_sub_field('icon_block_image_sp')['url']; ?>">
-              <?php endif; ?>
-              <?php if(get_sub_field('icon_block_title_sp')): ?>
-              <h5 class="icon-block-title"><?php the_sub_field('icon_block_title_sp'); ?></h5>
-              <?php endif; ?>
-              <?php if(get_sub_field('icon_block_content_sp')): ?>
-              <p class="icon-block-content"><?php the_sub_field('icon_block_content_sp'); ?></p>
-              <?php endif; ?>
-            </div>
-          <?php endwhile; ?>
-        </div>
+          <div class="intro-icons-wrap">
+            <?php while ( have_rows('icon_blocks_sp') ) : the_row(); ?>
+
+              <div class="icon-block-wrap">
+                <?php if( get_sub_field('icon_block_image_sp') ): ?>
+                  <img class="icon-block-graphic" src="<?php echo get_sub_field('icon_block_image_sp')['url']; ?>">
+                <?php endif; ?>
+                <?php if( get_sub_field('icon_block_title_sp') ): ?>
+                  <h5 class="icon-block-title"><?php the_sub_field('icon_block_title_sp'); ?></h5>
+                <?php endif; ?>
+                <?php if( get_sub_field('icon_block_content_sp') ): ?>
+                  <p class="icon-block-content"><?php the_sub_field('icon_block_content_sp'); ?></p>
+                <?php endif; ?>
+              </div>
+
+            <?php endwhile; ?>
+          </div>
         <?php endif; ?>
       </section>
 
 
-    <?php elseif( get_row_layout() == 'tab_component_sp' ): // TABS COMPONENT
+    <?php elseif( get_row_layout() == 'tab_component_sp' ): // Tabs Component
 
       $sell_tab_counter = 1; ?>
 
       <section class="tabs-component-section container">
 
-        <?php if( have_rows('tabs_sp') ): // Tab Titles ?>
-        <div class="tab-title-wrap scroll">
+        <?php if( have_rows('tabs_sp') ): // tab titles ?>
+          <div class="tab-title-wrap scroll">
 
-          <?php while ( have_rows('tabs_sp') ) : the_row(); ?>	
-          <div class="tab">
-            <div class="tab-inner-wrap">
-              <h4 class="tab-title tab-title-<?php echo $sell_tab_counter; ?>"><?php the_sub_field('tab_title_sp'); ?></h2>
-            </div>
-          </div>
-          <?php $sell_tab_counter++;
-          endwhile; ?>
+            <?php while ( have_rows('tabs_sp') ) : the_row(); ?>	
 
-        </div> 
+              <div class="tab">
+                <div class="tab-inner-wrap">
+                  <h4 class="tab-title tab-title-<?php echo $sell_tab_counter; ?>"><?php the_sub_field('tab_title_sp'); ?></h2>
+                </div>
+              </div>
+
+              <?php $sell_tab_counter++;  
+
+            endwhile; ?>
+
+          </div> 
         <?php endif; ?>
 
-				<?php if( have_rows('tabs_sp') ): // Tab Content
-
+				<?php if( have_rows('tabs_sp') ): // tab content
+        
 				$sell_tab_counter = 1;?>
 				
-				<div class="tab-content-container">
+          <div class="tab-content-container">
 
-					<?php while ( have_rows('tabs_sp') ) : the_row(); ?>
-					<div class="tab-content-wrap tab-content-wrap-<?php echo $sell_tab_counter; ?>">
+            <?php while ( have_rows('tabs_sp') ) : the_row(); ?>
+              <div class="tab-content-wrap tab-content-wrap-<?php echo $sell_tab_counter; ?>">
 
-            <?php if(get_sub_field('include_product_packages_sp')) : ?>
+                <?php if( get_sub_field('include_product_packages_sp') ) : // include product packages check ?>
 
-            <section class="cre__component-container--outer">
-              
-              <div class="cre__mobile-previous cre__carousel-arrow">
-                <i class="fas fa-chevron-left"></i>
-              </div>
-              <div class="cre__mobile-next cre__carousel-arrow">
-                <i class="fas fa-chevron-right"></i>
-              </div>
-              
-              <div class="cre__component-container--inner main-grid-container">
-                
-                <div class="cre__grid-area-1 cre__grid-area cre__grid-top-left">
-                  <div style="height: 0px;"></div>
-
-                  <div class="cre__grid-top-left-inner-container">
-
-                    <div class="cre__grid-top-left-wysiwig-container">
-                      <?php the_sub_field('product_packages_top_left_grid_sp'); ?>
-                    </div>
-                
-                    <!-- Learning Modalities and Dropdown (Original Content) -->
-                    <!--<p class="cre__delivery-method-intro-text">Hondros offers multiple ways to learn, including:</p>
-                    <ul class="cre__delivery-method-intro-list">
-                      <li class="cre__delivery-method-intro-list-item"><i class="fas fa-chalkboard-teacher cre__delivery-method-text-icon"></i> In-person Classes</li>
-                      <li class="cre__delivery-method-intro-list-item"><i class="fas fa-laptop cre__delivery-method-text-icon" style="font-size: 19px;"></i> Livestream Classes</li>
-                      <li class="cre__delivery-method-intro-list-item"><i class="fas fa-walking cre__delivery-method-text-icon" style="margin: -1px 6px 0 5px; font-size: 22px"></i> Self-paced Online Courses</li>
-                    </ul>
-                
-                    <div class="cre__delivery-method-dropdown-container-outer">
-                      <div class="cre__delivery-method-dropdown-container">
-                      
-                        <div class="cre__delivery-method-clickable">
-                          <span class="cre__delivery-method-headline">Delivery method options</span>
-                          <i class="fas fa-chevron-down cre__delivery-method-icon"></i>
-                        </div>
-                        <div class="cre__delivery-method-dropdown">
-                          <div class="cre__delivery-method-dropdown-option"><span class="cre__delivery-method-dropdown-option-title">In-person Classes -</span> if you prefer a structured schedule and enjoy the guidance of a live instructor in a classroom environment.</div>
-                          <div class="cre__delivery-method-dropdown-option"><span class="cre__delivery-method-dropdown-option-title">Livestream Classes -</span> if you learn best in a classroom setting, but prefer the comfort of learning from your home or office.</div>
-                          <div class="cre__delivery-method-dropdown-option"><span class="cre__delivery-method-dropdown-option-title">Online Courses -</span> if you are self-motivated and need the flexibility to take courses that work around your schedule.</div>
-                        </div>
-                      
-                      </div>
-                    </div>
-                    
-                    <p class="cre__delivery-method-intro-text" style="margin-top: 24px;">Plus, to best fit your unique education needs, you can change your learning method at any time.</p> -->
+                <section class="cre__component-container--outer">
                   
+                  <div class="cre__mobile-previous cre__carousel-arrow">
+                    <i class="fas fa-chevron-left"></i>
                   </div>
-                </div>
-                
-                <div class="cre__grid-area cre__carousel-dots-grid-area-spacer">
-                  Row removed on desktop
-                </div>
-                
-                <?php $css_class_counter = 2;
-                
-                if( have_rows('product_packages_value_props_sp') ):
-                  while ( have_rows('product_packages_value_props_sp') ) : the_row(); ?>
+                  <div class="cre__mobile-next cre__carousel-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                  </div>
+                  
+                  <div class="cre__component-container--inner main-grid-container">
+                    
+                    <div class="cre__grid-area-1 cre__grid-area cre__grid-top-left">
+                      <div style="height: 0px;"></div>
 
-                    <div class="cre__grid-area-<?php echo $css_class_counter; ?> cre__grid-area cre__value-prop-container" >
-                      <div class="cre__value-prop-container--inner">
-                        <div class="cre__value-prop--clickable">
-                          <p class="cre__value-prop-heading"><?php the_sub_field('value_prop_title_sp'); ?></p>
-                          <i class="fas fa-chevron-right cre__value-prop-arrow"></i>
+                      <div class="cre__grid-top-left-inner-container">
+
+                        <div class="cre__grid-top-left-wysiwig-container">
+                          <?php the_sub_field('product_packages_top_left_grid_sp'); ?>
                         </div>
-                        <div class="cre__value-prop--expand">
-                          <p class="cre__value-prop-msg"><?php the_sub_field('value_prop_description_sp'); ?></p>
-                        </div>
+                    
+                        <?php // Learning Modalities and Dropdown (Original Markup)
+                        // <p class="cre__delivery-method-intro-text">Hondros offers multiple ways to learn, including:</p>
+                        // <ul class="cre__delivery-method-intro-list">
+                        //   <li class="cre__delivery-method-intro-list-item"><i class="fas fa-chalkboard-teacher cre__delivery-method-text-icon"></i> In-person Classes</li>
+                        //   <li class="cre__delivery-method-intro-list-item"><i class="fas fa-laptop cre__delivery-method-text-icon" style="font-size: 19px;"></i> Livestream Classes</li>
+                        //   <li class="cre__delivery-method-intro-list-item"><i class="fas fa-walking cre__delivery-method-text-icon" style="margin: -1px 6px 0 5px; font-size: 22px"></i> Self-paced Online Courses</li>
+                        // </ul>
+                    
+                        // <div class="cre__delivery-method-dropdown-container-outer">
+                        //   <div class="cre__delivery-method-dropdown-container">
+                          
+                        //     <div class="cre__delivery-method-clickable">
+                        //       <span class="cre__delivery-method-headline">Delivery method options</span>
+                        //       <i class="fas fa-chevron-down cre__delivery-method-icon"></i>
+                        //     </div>
+                        //     <div class="cre__delivery-method-dropdown">
+                        //       <div class="cre__delivery-method-dropdown-option"><span class="cre__delivery-method-dropdown-option-title">In-person Classes -</span> if you prefer a structured schedule and enjoy the guidance of a live instructor in a classroom environment.</div>
+                        //       <div class="cre__delivery-method-dropdown-option"><span class="cre__delivery-method-dropdown-option-title">Livestream Classes -</span> if you learn best in a classroom setting, but prefer the comfort of learning from your home or office.</div>
+                        //       <div class="cre__delivery-method-dropdown-option"><span class="cre__delivery-method-dropdown-option-title">Online Courses -</span> if you are self-motivated and need the flexibility to take courses that work around your schedule.</div>
+                        //     </div>
+                          
+                        //   </div>
+                        // </div>
+                        
+                        // <p class="cre__delivery-method-intro-text" style="margin-top: 24px;">Plus, to best fit your unique education needs, you can change your learning method at any time.</p> ?>
                       </div>
                     </div>
-
-                  <?php $css_class_counter++;
-
-                  endwhile; 
-                endif; ?>
-
-                
-                <div class="cre__grid-area-<?php echo $css_class_counter; ?> cre__grid-area cre__grid-bottom-left">
-                  <div class="cre__grid-bottom-left-inner-container">
                     
-                  </div>
-                  <div style="height: 50px;"></div>
-                </div>
-                
-
-                <?php if( have_rows('product_packages_sp') ) : // Product Packages
-
-                  $css_class_counter = 0;
-                  $css_class_counter_interval = 40;
-                  $product_package_counter = 1;
-
-                  while( have_rows('product_packages_sp') ): the_row(); 
-                    
-                    $css_class_counter = 0; 
-                    $package_highlight = get_sub_field('package_highlight_sp'); ?>
-
-                    <div class="cre__grid-area-<?php echo $css_class_counter + $css_class_counter_interval; ?> cre__grid-area cre__grid-card cre__package-<?php echo $product_package_counter; ?> cre__mobile-package-show <?php if($package_highlight) echo 'cre__package-highlight' ?>">
-                      <div class="cre__card-ribbon">
-                        <span class="cre__card-ribbon-content"><?php the_sub_field('product_package_ribbon_content_sp'); ?></span>
-                      </div>
-                      
-                      <div class="cre__card-container">
-                      
-                        <div class="cre__card-icon-container">
-                          <i class="fas fa-laptop"></i>
-                        </div>
-                        
-                        <div class="cre__card-content-container">
-                          <h3 class="cre__card-title"><?php the_sub_field('product_package_name_sp'); ?></h3>
-                          <p class="cre__price-container">
-                            <?php if(get_sub_field('product_package_price_slashed_sp')) : ?>
-                              <s class="strike">$<?php the_sub_field('product_package_price_slashed_sp'); ?></s>
-                            <?php endif; ?>
-                            <?php if(get_sub_field('product_package_price_sp')) : ?>
-                              <span class="cre__price">$<?php the_sub_field('product_package_price_sp'); ?></span>
-                            <?php endif; ?>
-                          </p>
-                        </div>
-
-                        <?php if(get_sub_field('product_package_description_sp')) : ?>
-                          <p class="cre__card-payment-details"><?php the_sub_field('product_package_description_sp'); ?></p>
-                        <?php endif; ?>
-                        
-                        <div class="cre__btn-container cre__btn-container--card">
-                          <button class="cre__btn cre__btn--card" target="_blank"><a href="<?php echo get_sub_field('product_package_button_url_sp'); ?>">Enroll</a></button>
-                        </div>
-                        
-                        <div class="cre__mobile-divider"></div>
-                        
-                      </div>
-                      
+                    <div class="cre__grid-area cre__carousel-dots-grid-area-spacer">
+                      Row removed on desktop
                     </div>
-
-                    <?php $css_class_counter++; ?>
-              
-                    <div class="cre__grid-area cre__carousel-dots-grid-area cre__carousel-dots-grid-area-<?php echo $product_package_counter; ?> cre__package-<?php echo $product_package_counter; ?> cre__mobile-package-show <?php if($package_highlight) echo 'cre__package-highlight' ?>"></div>
                     
-                    <?php if( have_rows('individual_package_value_props_sp') ) : // Products Value Props
-                      while( have_rows('individual_package_value_props_sp') ): the_row(); ?>
+                    <?php $css_class_counter = 2;
+                    
+                    if( have_rows('product_packages_value_props_sp') ):
+                      while ( have_rows('product_packages_value_props_sp') ) : the_row(); ?>
 
-                        <div class="cre__grid-area-<?php echo $css_class_counter + $css_class_counter_interval; ?> cre__grid-area cre__value-prop-item cre__package-<?php echo $product_package_counter; ?> cre__mobile-package-show <?php if($package_highlight) echo 'cre__package-highlight' ?>">
-                          <i class="<?php if(get_sub_field('individual_package_value_prop_sp')) {
-                            echo 'fas fa-check-circle';
-                          } else { 
-                            echo 'far fa-circle';
-                          } ?> cre__value-prop-item-icon"></i>
+                        <div class="cre__grid-area-<?php echo $css_class_counter; ?> cre__grid-area cre__value-prop-container" >
+                          <div class="cre__value-prop-container--inner">
+                            <div class="cre__value-prop--clickable">
+                              <p class="cre__value-prop-heading"><?php the_sub_field('value_prop_title_sp'); ?></p>
+                              <i class="fas fa-chevron-right cre__value-prop-arrow"></i>
+                            </div>
+                            <div class="cre__value-prop--expand">
+                              <p class="cre__value-prop-msg"><?php the_sub_field('value_prop_description_sp'); ?></p>
+                            </div>
+                          </div>
                         </div>
 
-                        <?php $css_class_counter++; 
+                      <?php $css_class_counter++;
 
-                      endwhile;
+                      endwhile; 
                     endif; ?>
-                
-                    <div class="cre__grid-area-<?php echo $css_class_counter + $css_class_counter_interval; ?> cre__grid-area cre__grid-cta cre__package-<?php echo $product_package_counter; ?> cre__mobile-package-show <?php if(get_sub_field('package_highlight_sp')) echo 'cre__package-highlight' ?>">
-                      <div class="cre__btn-container cre__btn-container--grid-bottom">
-                        <button class="cre__btn cre__btn--grid-bottom" target="_blank"><a href="<?php echo get_sub_field('product_package_button_url_sp'); ?>">Enroll</a></button>
+
+                    
+                    <div class="cre__grid-area-<?php echo $css_class_counter; ?> cre__grid-area cre__grid-bottom-left">
+                      <div class="cre__grid-bottom-left-inner-container">
+                        
                       </div>
-                      <p class="cre__grid-cta-preview"><a href="#" class="cre__grid-cta-preview-link">Preview</a></p>
+                      <div style="height: 50px;"></div>
                     </div>
+                    
 
-                    <?php $css_class_counter_interval += 40;
-                          $product_package_counter++;
+                    <?php if( have_rows('product_packages_sp') ) : // Product Packages
 
-                  endwhile;  // END PRODUCT PACKAGE LOOP  have_rows('product_packages_sp')
-                endif; // END PRODUCT PACKAGE ROW  have_rows('product_packages_sp') ?>
+                      $css_class_counter = 0;
+                      $css_class_counter_interval = 40;
+                      $product_package_counter = 1;
+
+                      while( have_rows('product_packages_sp') ): the_row(); 
+                        
+                        $css_class_counter = 0; 
+                        $package_highlight = get_sub_field('package_highlight_sp'); ?>
+
+                        <div class="cre__grid-area-<?php echo $css_class_counter + $css_class_counter_interval; ?> cre__grid-area cre__grid-card cre__package-<?php echo $product_package_counter; ?> <?php if($product_package_counter == 1) echo 'cre__mobile-package-show'; ?> <?php if($package_highlight) echo 'cre__package-highlight'; ?>">
+                          <div class="cre__card-ribbon">
+                            <span class="cre__card-ribbon-content"><?php the_sub_field('product_package_ribbon_content_sp'); ?></span>
+                          </div>
+                          
+                          <div class="cre__card-container">
+                          
+                            <div class="cre__card-icon-container">
+                              <i class="fas fa-laptop"></i>
+                            </div>
+                            
+                            <div class="cre__card-content-container">
+                              <h3 class="cre__card-title"><?php the_sub_field('product_package_name_sp'); ?></h3>
+                              <p class="cre__price-container">
+                                <?php if( get_sub_field('product_package_price_slashed_sp') ) : ?>
+                                  <s class="strike">$<?php the_sub_field('product_package_price_slashed_sp'); ?></s>
+                                <?php endif; ?>
+                                <?php if( get_sub_field('product_package_price_sp') ) : ?>
+                                  <span class="cre__price">$<?php the_sub_field('product_package_price_sp'); ?></span>
+                                <?php endif; ?>
+                              </p>
+                            </div>
+
+                            <?php if( get_sub_field('product_package_description_sp') ) : ?>
+                              <p class="cre__card-payment-details"><?php the_sub_field('product_package_description_sp'); ?></p>
+                            <?php endif; ?>
+                            
+                            <div class="cre__btn-container cre__btn-container--card">
+                              <button class="cre__btn cre__btn--card" target="_blank"><a href="<?php echo get_sub_field('product_package_button_url_sp'); ?>">Enroll</a></button>
+                            </div>
+                            
+                            <div class="cre__mobile-divider"></div>
+                            
+                          </div>
+                          
+                        </div>
+
+                        <?php $css_class_counter++; ?>
                   
+                        <div class="cre__grid-area cre__carousel-dots-grid-area cre__carousel-dots-grid-area-<?php echo $product_package_counter; ?> cre__package-<?php echo $product_package_counter; ?> <?php if($product_package_counter == 1) echo 'cre__mobile-package-show'; ?> <?php if($package_highlight) echo 'cre__package-highlight' ?>"></div>
+                        
+                        <?php if( have_rows('individual_package_value_props_sp') ) : // Products Value Props
+                          while( have_rows('individual_package_value_props_sp') ): the_row(); ?>
 
-              </div> <!-- END .cre__component-container--inner --->   
-            </section> <!-- END .cre__component-container--outer --->
+                            <div class="cre__grid-area-<?php echo $css_class_counter + $css_class_counter_interval; ?> cre__grid-area cre__value-prop-item cre__package-<?php echo $product_package_counter; ?> <?php if($product_package_counter == 1) echo 'cre__mobile-package-show'; ?> <?php if($package_highlight) echo 'cre__package-highlight' ?>">
+                              <i class="<?php if( get_sub_field('individual_package_value_prop_sp') ) {
+                                echo 'fas fa-check-circle';
+                              } else { 
+                                echo 'far fa-circle';
+                              } ?> cre__value-prop-item-icon"></i>
+                            </div>
 
-            <?php endif; // END CONDITIONAL include_product_packages_sp ?>
+                            <?php $css_class_counter++; 
+
+                          endwhile;
+                        endif; ?>
+                    
+                        <div class="cre__grid-area-<?php echo $css_class_counter + $css_class_counter_interval; ?> cre__grid-area cre__grid-cta cre__package-<?php echo $product_package_counter; ?> <?php if($product_package_counter == 1) echo 'cre__mobile-package-show'; ?> <?php if(get_sub_field('package_highlight_sp')) echo 'cre__package-highlight' ?>">
+                          <div class="cre__btn-container cre__btn-container--grid-bottom">
+                            <button class="cre__btn cre__btn--grid-bottom" target="_blank"><a href="<?php echo get_sub_field('product_package_button_url_sp'); ?>">Enroll</a></button>
+                          </div>
+                          <p class="cre__grid-cta-preview"><a href="#" class="cre__grid-cta-preview-link">Preview</a></p>
+                        </div>
+
+                        <?php $css_class_counter_interval += 40;
+                              $product_package_counter++;
+
+                      endwhile;  // END PRODUCT PACKAGE LOOP  have_rows('product_packages_sp')
+                    endif; // END PRODUCT PACKAGE ROW  have_rows('product_packages_sp') ?> 
+
+                  </div>   
+                </section> 
+
+                <?php endif; // END CONDITIONAL include_product_packages_sp ?>
 
 
-						<div class="tab-content--wysiwyg">
-              <?php the_sub_field('tab_content_sp'); ?>
-            </div>
+                <div class="tab-content--wysiwyg">
+                  <?php the_sub_field('tab_content_sp'); ?>
+                </div>
 
-					</div>
-					<?php $sell_tab_counter++;
-					endwhile; // END TABS LOOP  have_rows('tabs_sp') ?>
-					
-				</div>
+              </div>
+
+              <?php $sell_tab_counter++;
+              
+            endwhile; // END TABS LOOP  have_rows('tabs_sp') ?>
+            
+          </div>
 				<?php endif; // END TABS ROW  have_rows('tabs_sp') ?>
 
       </section>
 
 
-    <?php elseif( get_row_layout() == 'horizontal_rule_block_sp' ): // HORIZONTAL RULE
+    <?php elseif( get_row_layout() == 'horizontal_rule_block_sp' ): // Horizontal Rule
       
       $horizontal_rule_version = get_sub_field( 'horizontal_rule_sp' ); ?>
 
@@ -723,6 +754,20 @@ get_header(); ?>
                                                   if($horizontal_rule_version == 'Light Version') echo 'horizontal-rule--light'; ?>">
         <hr>
       </div>
+
+
+    <?php elseif( get_row_layout() == 'spacer_block_sp' ): // Spacer Block ?>
+
+      <div class="spacer-container" style="height: <?php the_sub_field('spacer_height_sp'); ?>px;"></div>
+
+
+    <?php elseif( get_row_layout() == 'basic_content_section_sp' ): // Basic Content Section (wysiwyg) ?>
+
+      <section class="basic-content-section">
+        <div class="container">
+          <?php the_sub_field('basic_content_sp'); ?>
+        </div>
+      </section>
 
 
     <?php endif; // End Flexible Content Layout Types ?>
@@ -738,7 +783,7 @@ get_header(); ?>
 
 
 <script>
-
+  //** TABS FUNCTIONALITY **//
   const $tabTitleFirst = jQuery(".tab:first-of-type .tab-title");
   const $tabTitles = jQuery(".tab .tab-title");
   const $tabContentWrapFirst = jQuery(".tab-content-wrap-1");
@@ -763,178 +808,175 @@ get_header(); ?>
     })
   });
   
-</script>
 
-<script>
+  //** PRODUCT PACKAGES **//
 
-// keep track of number of package cards
-const $numberOfPackages = jQuery('.cre__grid-card').length;
+  // Keep track of number of packages
+  const $numberOfPackages = jQuery('.cre__grid-card').length;
 
+  // Build value prop items on mobile
+  const $valuePropItems = jQuery('.cre__value-prop-container');
+  let $valuePropHTML;
+  let gridColumnCounter1;
+  let gridColumnCounter2;
+  let gridColumnCounter3;
+  let gridColumnCounter4;
 
-////--- Build value prop items on mobile ---\\\\
-const $valuePropItems = jQuery('.cre__value-prop-container');
-
-let $valuePropHTML;
-let gridColumnCounter1;
-let gridColumnCounter2;
-let gridColumnCounter3;
-let gridColumnCounter4;
-
-jQuery.each($valuePropItems, function(i) { 
-  // clone and store value prop html
-  $valuePropHTML = jQuery('.cre__grid-area-' + (i + 2)).clone().html();
-         
-  // inject corresponding html into each value prop grid cell
-  gridColumnCounter1 = 41 + i;
-  gridColumnCounter2 = 81 + i;
-  gridColumnCounter3 = 121 + i;
-  gridColumnCounter4 = 161 + i;
-  jQuery('.cre__grid-area-' + gridColumnCounter1).append($valuePropHTML);
-  jQuery('.cre__grid-area-' + gridColumnCounter2).append($valuePropHTML);
-  jQuery('.cre__grid-area-' + gridColumnCounter3).append($valuePropHTML);
-  jQuery('.cre__grid-area-' + gridColumnCounter4).append($valuePropHTML);
-});
+  jQuery.each($valuePropItems, function(i) { 
+    // clone and store value prop html
+    $valuePropHTML = jQuery('.cre__grid-area-' + (i + 2)).clone().html();
+          
+    // inject corresponding html into each value prop grid cell
+    gridColumnCounter1 = 41 + i;
+    gridColumnCounter2 = 81 + i;
+    gridColumnCounter3 = 121 + i;
+    gridColumnCounter4 = 161 + i;
+    jQuery('.cre__grid-area-' + gridColumnCounter1).append($valuePropHTML);
+    jQuery('.cre__grid-area-' + gridColumnCounter2).append($valuePropHTML);
+    jQuery('.cre__grid-area-' + gridColumnCounter3).append($valuePropHTML);
+    jQuery('.cre__grid-area-' + gridColumnCounter4).append($valuePropHTML);
+  });
 
 
-////--- Value props click event ---\\\\
-jQuery('.cre__value-prop-container, .cre__value-prop-item').on('click', function() { 
-  const $this = jQuery(this);
-  
-  // toggle value prop description
-  // $this.find('.cre__value-prop--expand').slideToggle('slow');
-  // console.log($this.find('.cre__value-prop--expand'));
-  
-  // animate value prop area open/close
-  if($this.find('.cre__value-prop-arrow').hasClass('rotate-animation')) {
-    $this.find('.cre__value-prop-arrow').removeClass('rotate-animation');
-    $this.find('.cre__value-prop-heading').css({ color: '#424242', transition: '350ms' })
-  } else {
-    $this.find('.cre__value-prop-arrow').addClass('rotate-animation');
-    $this.find('.cre__value-prop-heading').css({ color: '#000000', transition: '350ms' })
-  }
-});
-
-
-////--- Mobile package navigation ---\\\\
-const $creCarouselDotsGridArea = jQuery('.cre__carousel-dots-grid-area');
-
-// create carousel dots
-jQuery.each($creCarouselDotsGridArea, function(i, dotGridArea) {
-  jQuery.each($creCarouselDotsGridArea, function(j, dot){   
-    dotGridArea.insertAdjacentHTML('beforeend', `                                
-      <div class="cre__carousel-dot cre__carousel-dot-${j + 1}"></div>
-    `)
-  }) 
-});
-
-// add highlight class to first carousel dot
-jQuery('.cre__carousel-dots-grid-area-1 .cre__carousel-dot-1').addClass('cre__dot--focus');
-
-// enable carousel dots navigation
-let crePackageCounter = 1;
-const $creCarouselDots = jQuery('.cre__carousel-dot');
-
-$creCarouselDots.on('click', function(e){
-  // navigate to correct package
-  jQuery('.cre__grid-area').removeClass('cre__mobile-package-show');
-  crePackageCounter = (jQuery(this).index()) + 1;
-  jQuery('.cre__package-' + (crePackageCounter)).addClass('cre__mobile-package-show');
-  // highlight correct dot
-  jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
-  jQuery('.cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
-})
-
-
-// next/previous mobile package arrow click
-const $carouselArrows = jQuery('.cre__carousel-arrow');
-const $mobilePrevious = jQuery('.cre__mobile-previous');
-const $mobileNext = jQuery('.cre__mobile-next');
-
-// on arrow click (previous/next)
-$carouselArrows.on('click', function(e){
-  
-  // if previous button click
-  if(e.target.parentElement.classList.contains('cre__mobile-previous')) {
+  // Value props click event
+  jQuery('.cre__value-prop-container, .cre__value-prop-item').on('click', function() { 
+    const $this = jQuery(this);
     
-    // show correct package and hide all others
+    // toggle value prop description
+    // $this.find('.cre__value-prop--expand').slideToggle('slow');
+    // console.log($this.find('.cre__value-prop--expand'));
+    
+    // animate value prop area open/close
+    if($this.find('.cre__value-prop-arrow').hasClass('rotate-animation')) {
+      $this.find('.cre__value-prop-arrow').removeClass('rotate-animation');
+      $this.find('.cre__value-prop-heading').css({ color: '#424242', transition: '350ms' })
+    } else {
+      $this.find('.cre__value-prop-arrow').addClass('rotate-animation');
+      $this.find('.cre__value-prop-heading').css({ color: '#000000', transition: '350ms' })
+    }
+  });
+
+
+  // Mobile package navigation
+  const $creCarouselDotsGridArea = jQuery('.cre__carousel-dots-grid-area');
+
+  // create carousel dots
+  jQuery.each($creCarouselDotsGridArea, function(i, dotGridArea) {
+    jQuery.each($creCarouselDotsGridArea, function(j, dot){   
+      dotGridArea.insertAdjacentHTML('beforeend', `                                
+        <div class="cre__carousel-dot cre__carousel-dot-${j + 1}"></div>
+      `)
+    }) 
+  });
+
+  // add highlight class to first carousel dot
+  jQuery('.cre__carousel-dots-grid-area-1 .cre__carousel-dot-1').addClass('cre__dot--focus');
+
+  // enable carousel dots navigation
+  let crePackageCounter = 1;
+  const $creCarouselDots = jQuery('.cre__carousel-dot');
+
+  $creCarouselDots.on('click', function(e){
+    // navigate to correct package
     jQuery('.cre__grid-area').removeClass('cre__mobile-package-show');
-    crePackageCounter--;
-    if(crePackageCounter < 1) crePackageCounter = $numberOfPackages;
-    jQuery('.cre__package-' + crePackageCounter).addClass('cre__mobile-package-show');
-    
-    // highlight correct carousel dot
-    if(jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter).hasClass('cre__package-' + crePackageCounter)) {
-      // remove highlight class from previous dot
-      jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
-      // add highlight class to dot
-      jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter + ' .cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
+    crePackageCounter = (jQuery(this).index()) + 1;
+    jQuery('.cre__package-' + (crePackageCounter)).addClass('cre__mobile-package-show');
+    // highlight correct dot
+    jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
+    jQuery('.cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
+  })
+
+
+  // Next/Previous mobile package arrow click
+  const $carouselArrows = jQuery('.cre__carousel-arrow');
+  const $mobilePrevious = jQuery('.cre__mobile-previous');
+  const $mobileNext = jQuery('.cre__mobile-next');
+
+  // on arrow click (previous/next)
+  $carouselArrows.on('click', function(e){
+
+    // if previous button click
+    if(e.target.parentElement.classList.contains('cre__mobile-previous')) {
+      
+      // show correct package and hide all others
+      jQuery('.cre__grid-area').removeClass('cre__mobile-package-show');
+      crePackageCounter--;
+      if(crePackageCounter < 1) crePackageCounter = $numberOfPackages;
+      jQuery('.cre__package-' + crePackageCounter).addClass('cre__mobile-package-show');
+      
+      // highlight correct carousel dot
+      if(jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter).hasClass('cre__package-' + crePackageCounter)) {
+        // remove highlight class from previous dot
+        jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
+        // add highlight class to dot
+        jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter + ' .cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
+      }
+
     }
-
-  }
-  
-  // if next button arrow click
-  if(e.target.parentElement.classList.contains('cre__mobile-next')) {  
     
-    // show correct package and hide all others
-    jQuery('.cre__grid-area').removeClass('cre__mobile-package-show'); 
-    crePackageCounter++;
-    if(crePackageCounter > $numberOfPackages) crePackageCounter = 1;
-    jQuery('.cre__package-' + crePackageCounter).addClass('cre__mobile-package-show'); 
-    
-    // highlight correct carousel dot
-    if(jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter).hasClass('cre__package-' + crePackageCounter)) {
-      // remove highlight class from previous dot
-      jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
-      // add highlight class to dot
-      jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter + ' .cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
+    // if next button arrow click
+    if(e.target.parentElement.classList.contains('cre__mobile-next')) {  
+      
+      // show correct package and hide all others
+      jQuery('.cre__grid-area').removeClass('cre__mobile-package-show'); 
+      crePackageCounter++;
+      if(crePackageCounter > $numberOfPackages) crePackageCounter = 1;
+      jQuery('.cre__package-' + crePackageCounter).addClass('cre__mobile-package-show'); 
+      
+      // highlight correct carousel dot
+      if(jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter).hasClass('cre__package-' + crePackageCounter)) {
+        // remove highlight class from previous dot
+        jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
+        // add highlight class to dot
+        jQuery('.cre__carousel-dots-grid-area-' + crePackageCounter + ' .cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
+      }
+      
     }
     
+  });
+
+
+  // // Delivery method dropdown
+  // const $deliveryMethodDropdownContainer = jQuery('.cre__delivery-method-dropdown-container');
+  // const $deliveryMethodClickable = jQuery('.cre__delivery-method-clickable');
+  // const $deliveryMethodDropdown = jQuery('.cre__delivery-method-dropdown');
+
+  // let arrowState = 'no-rotate';
+
+  // $deliveryMethodClickable.on('click', function(){
+  //   // open/close dropdown
+  //   $deliveryMethodDropdown.slideToggle('fast');
+    
+  //   // animate arrow
+  //   if(arrowState === 'no-rotate') {
+  //     jQuery('.cre__delivery-method-icon').css({ /*transform: 'rotate(180deg)'*/ transform: 'scaleY(-1)', transition: '350ms' });
+  //     arrowState = 'rotate';
+  //     return arrowState;
+  //   }
+  //   if(arrowState === 'rotate') {
+  //     jQuery('.cre__delivery-method-icon').css({ /*transform: 'rotate(0deg)'*/ transform: 'scaleY(1)', transition: '350ms' });
+  //     arrowState = 'no-rotate';
+  //     return arrowState;
+  //   }  
+  // });
+
+  // Top left grid dropdown height fix for different screen sizes
+  // const $creDropdownHeight = jQuery('.cre__delivery-method-dropdown-container').height();
+  // jQuery('.cre__delivery-method-dropdown-container-outer').css({ height: $creDropdownHeight });
+
+  // Fix border on last grid column (desktop)
+  const mobileMediaQuery = window.matchMedia('(min-width: 850px)');
+  if (mobileMediaQuery.matches && !jQuery('.cre__package-' + $numberOfPackages).hasClass('cre__package-highlight')) {
+    jQuery('.cre__package-' + $numberOfPackages + ':not(.cre__grid-card), .cre__package-' + $numberOfPackages + ' .cre__card-container').css({ borderRight: '3px solid #d1d2d4' })
   }
-  
-});
 
+  // // Set equal height card titles
+  // const $cardTitles = jQuery('.cre__card-title');
+  // const cardTitleTallest = Math.max($cardTitles.height());
 
-// ////--- Delivery method dropdown ---\\\\
-// const $deliveryMethodDropdownContainer = jQuery('.cre__delivery-method-dropdown-container');
-// const $deliveryMethodClickable = jQuery('.cre__delivery-method-clickable');
-// const $deliveryMethodDropdown = jQuery('.cre__delivery-method-dropdown');
-
-// let arrowState = 'no-rotate';
-
-// $deliveryMethodClickable.on('click', function(){
-//   // open/close dropdown
-//   $deliveryMethodDropdown.slideToggle('fast');
-  
-//   // animate arrow
-//   if(arrowState === 'no-rotate') {
-//     jQuery('.cre__delivery-method-icon').css({ /*transform: 'rotate(180deg)'*/ transform: 'scaleY(-1)', transition: '350ms' });
-//     arrowState = 'rotate';
-//     return arrowState;
-//   }
-//   if(arrowState === 'rotate') {
-//     jQuery('.cre__delivery-method-icon').css({ /*transform: 'rotate(0deg)'*/ transform: 'scaleY(1)', transition: '350ms' });
-//     arrowState = 'no-rotate';
-//     return arrowState;
-//   }  
-// });
-
-// Top left grid dropdown height fix for different screen sizes
-// const $creDropdownHeight = jQuery('.cre__delivery-method-dropdown-container').height();
-// jQuery('.cre__delivery-method-dropdown-container-outer').css({ height: $creDropdownHeight });
-
-// Fix border on last grid column (desktop)
-const mobileMediaQuery = window.matchMedia('(min-width: 850px)');
-if (mobileMediaQuery.matches && !jQuery('.cre__package-' + $numberOfPackages).hasClass('cre__package-highlight')) {
-  jQuery('.cre__package-' + $numberOfPackages + ':not(.cre__grid-card), .cre__package-' + $numberOfPackages + ' .cre__card-container').css({ borderRight: '3px solid #d1d2d4' })
-}
-
-// // Set equal height card titles
-// const $cardTitles = jQuery('.cre__card-title');
-// const cardTitleTallest = Math.max($cardTitles.height());
-
-// jQuery.each($cardTitles, function(i, cardTitle) {
-//   jQuery(cardTitle).css({ height: cardTitleTallest });
-// });
+  // jQuery.each($cardTitles, function(i, cardTitle) {
+  //   jQuery(cardTitle).css({ height: cardTitleTallest });
+  // });
 
 </script>
 
