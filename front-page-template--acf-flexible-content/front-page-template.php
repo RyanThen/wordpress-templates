@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php 
+/*
+  Template Name: Front Page Layout
+*/
+
+get_header(); ?>
 
 <style>
 
@@ -108,23 +113,27 @@
 <?php if( have_rows('front_page_flexible_content') ): // Front Page Flexible Content Template
   while( have_rows('front_page_flexible_content') ): the_row();
 
-    $calendar_count = 0; ?>
+    $hero_bg_img_url = get_sub_field('hero_background_image_fp')['url'];
+    $hero_primary_headline = get_sub_field('hero_primary_headline_fp');
+    $hero_secondary_headline = get_sub_field('hero_secondary_headline_fp');
+    $calendar_count = 0;
+    $calendar_count_half = 1; ?>
 
     
     <?php if( get_row_layout() == 'hero_section_fp' ): // Hero Section ?>
 
-      <section class="hero-section" style="background: url('<?php echo get_sub_field('hero_background_image_fp')['url']; ?>')">
+      <section class="hero-section" style="background: url('<?php echo $hero_bg_img_url; ?>')">
         <div class="container hero-container">
 
-          <?php if(get_sub_field('hero_primary_headline_fp') || get_sub_field('hero_secondary_headline_fp')) : ?>
+          <?php if($hero_primary_headline || $hero_secondary_headline) : ?>
             <div class="hero-content hero-content-left">
 
-              <?php if(get_sub_field('hero_primary_headline_fp')) : ?>
-                <h1 class="page-title"><?php the_sub_field('hero_primary_headline_fp'); ?></h1>
+              <?php if( $hero_primary_headline ) : ?>
+                <h1 class="page-title"><?php echo $hero_primary_headline; ?></h1>
               <?php endif; ?>
 
-              <?php if(get_sub_field('hero_secondary_headline_fp')) : ?>
-                <div class="page-sub-title"><?php the_sub_field('hero_secondary_headline_fp'); ?></div>
+              <?php if( $hero_secondary_headline ) : ?>
+                <div class="page-sub-title"><?php echo $hero_secondary_headline; ?></div>
               <?php endif; ?>
 
               <?php if( have_rows('hero_buttons_fp') ): ?>
@@ -144,19 +153,23 @@
       </section>
 
       
-    <?php elseif( get_row_layout() == 'content_section_fp' ): // Basic Content Section (wysiwyg) ?>
+    <?php elseif( get_row_layout() == 'content_section_fp' ): // Basic Content Section (wysiwyg) 
+      
+      $basic_content_block = get_sub_field('content_intro_fp'); ?>
 
       <section class="basic-content-section">
         <div class="container">
-          <?php the_sub_field('content_intro_fp'); ?>
+          <?php echo $basic_content_block; ?>
         </div>
       </section>
 
 
-    <?php elseif( get_row_layout() == 'calendar_section_fp' ): // Calendar Section ?>
+    <?php elseif( get_row_layout() == 'calendar_section_fp' ): // Calendar Section 
       
-      <?php if( get_sub_field('calendar_group_title_fp') ): ?>
-        <h3 class="container text-center calendar-group-title"><?php the_sub_field('calendar_group_title_fp'); ?></h3>
+      $calendar_group_title = get_sub_field('calendar_group_title_fp');
+      
+      if( $calendar_group_title ): ?>
+        <h3 class="container text-center calendar-group-title"><?php echo $calendar_group_title; ?></h3>
       <?php endif; ?>
 
       <?php if( have_rows('calendar_fp') ):
@@ -164,22 +177,29 @@
 
           $calendar_count++;  // variable first declared at top of template
           $calendar_layout_type = get_sub_field('calendar_layout_type_fp');
+          $calendar_title = get_sub_field('calendar_title_fp');
           
           // Calendar Section 
-          if($calendar_layout_type == 'Full') echo '<section class="container calendars-container full">';
-          if($calendar_layout_type == 'Half' && $calendar_count == 1) echo '<section class="container calendars-container half">'; ?>
+          if( $calendar_layout_type == 'Full' ) echo '<section class="container calendars-container full">';
+          if( $calendar_layout_type == 'Half' && $calendar_count_half == 1 ) echo '<section class="container calendars-container half">'; ?>
 
             <div class="calendar-section">
               <div class="text-center calendar-container">
 
-                <?php if(get_sub_field('calendar_title_fp')) : ?>
-                  <h4 class="calendar-title"><?php the_sub_field('calendar_title_fp'); ?></h4>
+                <?php if( $calendar_title ) : ?>
+                  <h4 class="calendar-title"><?php echo $calendar_title; ?></h4>
                 <?php endif; ?>
 
                 <div class="calendar calendar-<?php echo $calendar_count; ?>">
 
                   <?php if( have_rows('calendar_single_entry_fp') ):
-                    while( have_rows('calendar_single_entry_fp') ) : the_row(); // calendar single entry loop ?>
+                    while( have_rows('calendar_single_entry_fp') ) : the_row(); // calendar single entry loop 
+
+                      $single_entry_month = get_sub_field('single_entry_month_fp');
+                      $single_entry_day = get_sub_field('single_entry_day_fp');
+                      $single_entry_title = get_sub_field('single_entry_title_fp');
+                      $single_entry_desc = get_sub_field('single_entry_desc_fp');
+                      $single_entry_url = get_sub_field('single_entry_url_fp'); ?>
 
                       <div class="calendar__single-container">
 
@@ -187,8 +207,8 @@
 
                           <div class="calendar__single-content-container--inner">
                             <div class="calendar__date-container">
-                              <div class="calendar__date--month"><?php the_sub_field('single_entry_month_fp'); ?></div>
-                              <div class="calendar__date--day"><?php the_sub_field('single_entry_day_fp'); ?></div>
+                              <div class="calendar__date--month"><?php echo $single_entry_month; ?></div>
+                              <div class="calendar__date--day"><?php echo $single_entry_day; ?></div>
                             </div>
                           </div>
 
@@ -196,15 +216,17 @@
 
                             <div class="calendar__content-row calendar__content-row-1">
                               <p class="calendar__content-row-text">
-                                <span class="calendar__content-row--date"><?php the_sub_field('single_entry_month_fp'); ?> <?php the_sub_field('single_entry_day_fp'); ?></span> @ 
+                                <span class="calendar__content-row--date"><?php echo $single_entry_month; ?> <?php echo $single_entry_day; ?></span> @ 
                                 <span class="calendar__content-row--time">Time</span> <span class="calendar__content-row--time-zone">EST</span>
                               </p>
                             </div>
 
                             <div class="calendar__content-row calendar__content-row-2">
-                              <h4 class="calendar__course-title"><?php the_sub_field('single_entry_title_fp'); ?></h4>
-                              <?php if(get_sub_field('single_entry_desc_fp')) : ?>
-                                <p class="calendar__course-desc"><?php the_sub_field('single_entry_desc_fp'); ?></p>
+                              <?php if( $single_entry_title ) : ?>
+                                <h4 class="calendar__course-title"><?php echo $single_entry_title; ?></h4>
+                              <?php endif; 
+                              if( $single_entry_desc ) : ?>
+                                <p class="calendar__course-desc"><?php echo $single_entry_desc; ?></p>
                               <?php endif; ?>
                             </div>
 
@@ -221,9 +243,9 @@
 
                         </div>
 
-                        <?php if(get_sub_field('single_entry_url_fp')) : ?>
+                        <?php if( $single_entry_url ) : ?>
                           <div class="cal-btn-container">
-                            <a href="<?php echo get_sub_field('single_entry_url_fp'); ?>" class="cal-btn">Register</a>
+                            <a href="<?php echo $single_entry_url; ?>" class="cal-btn">Register</a>
                           </div>
                         <?php endif; ?>
 
@@ -237,37 +259,49 @@
               </div>
             </div>
             
-          <?php if($calendar_layout_type == 'Full') echo '</section>';
-                if($calendar_layout_type == 'Half' && $calendar_count == 2) echo '</section>'; 
+          <?php if( $calendar_layout_type == 'Full' ) echo '</section>';
+                if( $calendar_layout_type == 'Half' && $calendar_count_half == 2 ) { echo '</section>'; $calendar_count_half = 0; }
             
+          if( $calendar_layout_type == 'Half' ) $calendar_count_half++;
+
         endwhile;
       endif; ?>
 
     
-    <?php elseif( get_row_layout() == 'quote_section_fp' ): // Quote Section ?>
+    <?php elseif( get_row_layout() == 'quote_section_fp' ): // Quote Section 
+      
+      $quote_content = get_sub_field('quote_content_fp');
+      $quote_cite = get_sub_field('quote_cite_fp'); ?>
 
       <section class="quote-section--full-width">
         <div class="container text-center quote-content-container">
-          <h4 class="quote-content"><?php the_sub_field('quote_content_fp'); ?></h4>
-          <?php if(get_sub_field('quote_cite_fp')) : ?>
-            <p class="quote-cite"><?php the_sub_field('quote_cite_fp'); ?></p>
+          <?php if( $quote_content ) : ?>
+            <h4 class="quote-content"><?php echo $quote_content; ?></h4>
+          <?php endif;
+          if( $quote_cite ) : ?>
+            <p class="quote-cite"><?php echo $quote_cite; ?></p>
           <?php endif; ?>
         </div>
       </section>
 
 
-    <?php elseif( get_row_layout() == 'form_section_fp' ): // RFI Form Section ?>
+    <?php elseif( get_row_layout() == 'form_section_fp' ): // RFI Form Section 
+      
+      $form_section_title = get_sub_field('form_section_title_fp');
+      $form_section_subtitle = get_sub_field('form_section_subtitle_fp');
+      $hubspot_form_portal_id = get_sub_field('hubspot_form_portal_id_fp');
+      $hubspot_form_id = get_sub_field('hubspot_form_id_fp'); ?>
 
       <section class="form-section">
         <div class="container form-content-container">
 
-          <?php if(get_sub_field('form_section_title_fp') || get_sub_field('form_section_subtitle_fp')) : ?>
+          <?php if( $form_section_title || $form_section_subtitle ) : ?>
             <div class="text-center form-headline-group">
-              <?php if(get_sub_field('form_section_title_fp')) : ?>
-                <h3><?php the_sub_field('form_section_title_fp'); ?></h3>
-              <?php endif; ?>
-              <?php if(get_sub_field('form_section_subtitle_fp')) : ?>
-                <p><?php the_sub_field('form_section_subtitle_fp'); ?></p>
+              <?php if( $form_section_title ) : ?>
+                <h3><?php echo $form_section_title; ?></h3>
+              <?php endif;
+              if( $form_section_subtitle ) : ?>
+                <p><?php echo $form_section_subtitle; ?></p>
               <?php endif; ?>
             </div>
           <?php endif; ?>
@@ -277,8 +311,8 @@
             <script>
               hbspt.forms.create({
                 region: "na1",
-                portalId: "<?php echo get_sub_field('hubspot_form_portal_id_fp'); ?>",
-                formId: "<?php echo get_sub_field('hubspot_form_id_fp'); ?>"
+                portalId: "<?php echo $hubspot_form_portal_id; ?>",
+                formId: "<?php echo $hubspot_form_id; ?>"
               });
             </script>
           </div>
@@ -295,6 +329,11 @@
                                                   if($horizontal_rule_version == 'Light Version') echo 'horizontal-rule--light'; ?>">
         <hr>
       </div>
+
+
+    <?php elseif( get_row_layout() == 'spacer_block_fp' ): // Spacer Block ?>
+
+      <div class="spacer-container" style="height: <?php the_sub_field('spacer_height_fp'); ?>px;"></div>
 
 
     <?php endif; // End Flexible Content Layout Types ?>
