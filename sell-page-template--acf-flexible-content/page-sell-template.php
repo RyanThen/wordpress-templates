@@ -869,7 +869,6 @@ get_header(); ?>
       jQuery('.cre__grid-area-' + gridColumnCounter4).append($valuePropHTML);
     });
 
-
     // Value props click event
     jQuery('.cre__value-prop-container, .cre__value-prop-item').on('click', function() { 
       const $this = jQuery(this);
@@ -887,7 +886,6 @@ get_header(); ?>
         $this.find('.cre__value-prop-heading').css({ color: '#000000', transition: '350ms' })
       }
     });
-
 
     // Mobile package navigation
     const $creCarouselDotsGridArea = jQuery('.cre__carousel-dots-grid-area');
@@ -917,7 +915,6 @@ get_header(); ?>
       jQuery('.cre__carousel-dot').removeClass('cre__dot--focus');
       jQuery('.cre__carousel-dot-' + crePackageCounter).addClass('cre__dot--focus');
     })
-
 
     // Next/Previous mobile package arrow click
     const $carouselArrows = jQuery('.cre__carousel-arrow');
