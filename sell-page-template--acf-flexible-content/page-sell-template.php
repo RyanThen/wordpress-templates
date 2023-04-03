@@ -538,11 +538,13 @@ get_header(); ?>
 
     <?php elseif( get_row_layout() == 'tab_component_sp' ): // Tabs Component
 
+      $tab_section_counter++;
       $sell_tab_counter = 1; ?>
 
-      <section class="tabs-component-section container">
+      <section id="tab-section-<?php echo $tab_section_counter; ?>" class="tabs-component-section container">
 
         <?php if( have_rows('tabs_sp') ): // tab titles ?>
+
           <div class="tab-title-wrap scroll">
 
             <?php while ( have_rows('tabs_sp') ) : the_row(); ?>	
@@ -562,7 +564,7 @@ get_header(); ?>
 
 				<?php if( have_rows('tabs_sp') ): // tab content
         
-				$sell_tab_counter = 1; ?>
+				  $sell_tab_counter = 1; ?>
 				
           <div class="tab-content-container">
 
@@ -762,7 +764,7 @@ get_header(); ?>
             endwhile; // END TABS LOOP  have_rows('tabs_sp') ?>
             
           </div>
-				<?php endif; // END TABS ROW  have_rows('tabs_sp') ?>
+        <?php endif; // END TABS ROW  have_rows('tabs_sp') ?>
 
       </section>
 
@@ -796,6 +798,8 @@ get_header(); ?>
 
   <?php endwhile; // End Flexible Content Loop ?>
 <?php endif; // End Flexible Content if statement?>
+
+<?php $tab_section_counter++; ?>
 
 
 <?php if( $product_package_counter >= 1 ) : ?>
