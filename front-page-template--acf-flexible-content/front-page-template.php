@@ -116,7 +116,6 @@ get_header(); ?>
     $hero_bg_img_url = get_sub_field('hero_background_image_fp')['url'];
     $hero_primary_headline = get_sub_field('hero_primary_headline_fp');
     $hero_secondary_headline = get_sub_field('hero_secondary_headline_fp');
-    $calendar_count = 0;
     $calendar_count_half = 1; ?>
 
     
