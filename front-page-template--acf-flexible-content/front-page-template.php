@@ -174,7 +174,7 @@ get_header(); ?>
       <?php if( have_rows('calendar_fp') ):
         while( have_rows('calendar_fp') ) : the_row();
 
-          $calendar_count++;  // variable first declared at top of template
+          $calendar_count++;
           $calendar_layout_type = get_sub_field('calendar_layout_type_fp');
           $calendar_title = get_sub_field('calendar_title_fp');
           
