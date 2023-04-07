@@ -811,29 +811,34 @@ get_header(); ?>
 
 <?php if( $sell_tab_counter >= 1 ) : ?>
   <script>
-    //** TABS FUNCTIONALITY **//
-    const $tabTitleFirst = jQuery(".tab:first-of-type .tab-title");
+    // Declare variables
     const $tabTitles = jQuery(".tab .tab-title");
-    const $tabContentWrapFirst = jQuery(".tab-content-wrap-1");
-    const $tabContentWrap = jQuery('.tab-content-wrap');
+    let $tabTitleFirst;
+    let $tabContentWrapFirst;
+    let $tabContentWrap;
+
+    const $tabSections = jQuery('.tabs-component-section');
+    const $tabSectionsCount = $tabSections.length;
 
     // Add classes to first tab so it renders on page load
-    $tabTitleFirst.addClass("active-tab");
-    $tabContentWrapFirst.addClass("d-block");
-      
-    // Activate new tab title on user click
-    $tabTitles.click(function () {
-      $tabTitles.removeClass("active-tab");
-      jQuery(this).addClass("active-tab");
+    $tabSections.each((index, tabSection) => { 
+      $tabTitleFirst = jQuery(tabSection).find(".tab:first-of-type .tab-title");
+      $tabContentWrapFirst = jQuery(tabSection).find(".tab-content-wrap-1");
+      $tabTitleFirst.addClass("active-tab");
+      $tabContentWrapFirst.addClass("d-block");
     });
-
-    // Activate new tab conent on user click
+      
+    // Activate new tab title and content on user click
     $tabTitles.click(function () {
-      $tabContentWrap.removeClass('d-block');
+      // tab titles
+      jQuery(this).closest('.tabs-component-section').find('.tab-title').removeClass("active-tab");
+      jQuery(this).addClass("active-tab");
 
-      $tabTitles.each((index, tabTitle) => {
-        if(tabTitle.classList.contains('active-tab')) jQuery('.tab-content-wrap-' + (index + 1)).addClass('d-block');
-      })
+      // tab content
+      jQuery(this).closest('.tabs-component-section').find('.tab-content-wrap').removeClass('d-block');
+      for(i = 1; i < 6; i++) {
+        if(jQuery(this).hasClass('tab-title-' + i)) jQuery(this).closest('.tab-title-wrap').next('.tab-content-container').find('.tab-content-wrap-' + i).addClass('d-block');
+      }
     });
   </script>
 <?php endif; ?>
