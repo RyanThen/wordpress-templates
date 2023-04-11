@@ -312,7 +312,6 @@
   .cre__card-title { margin-bottom: 0; padding: 25px 5px 5px; text-align: center; font-size: 22px; }
 
   .cre__price-container { display: flex; flex-direction: column; align-items: center; margin-block: 10px 20px; width: 100%; text-align: center; font-family: Lato, Arial, Helvetica, sans-serif; font-size: 26px; font-weight: bold; color: #13284b; }
-  .cre__price {  }
   .strike { position: relative; display: inline-block; margin: 0; font-size: 40px; font-weight: bold; color: darkgrey; text-decoration: none; }
   .strike::after { content: ""; position: absolute; bottom: 0; left: 0; height: 50%; height: calc(50% - 1px); width: 105%; font-weight: bold; border-top: 4px solid #F4B91F; transform: rotateZ(-15deg); }
   .cre__card-payment-details { text-align: center; margin-bottom: 10px; padding: 0 12px 25px 12px; font-family: sans-serif; font-size: 16px; line-height: 22px; color: #666666; }
@@ -370,7 +369,6 @@
     
     .cre__value-prop-item { width: 100%; padding: 12px 15px; justify-content: space-between; align-items: flex-start; }
     .cre__value-prop-item-icon { padding-right: 5px; }
-    .cre__value-prop--clickable {  }
     .cre__value-prop-item .cre__value-prop-container--inner { display: block; width: 100%; }
     
     .cre__card-ribbon { border-radius: 10px 10px 0 0;}
@@ -388,7 +386,6 @@
     
     .cre__mobile-divider { display: block; order: 2; background-color: #d1d2d4; }
     
-    .cre__price-container {  }
     .cre__price { font-size: 34px; }
     .strike { font-size: 28px; margin-bottom: 8px; }
     
