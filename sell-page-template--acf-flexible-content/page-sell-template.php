@@ -67,6 +67,7 @@ get_header(); ?>
 
   .main-grid-container {
     display: grid;
+    justify-content: center;
     grid-template-areas:
       "grid-1 grid-40 grid-80 grid-120"
       "dots-spacer dots-1 dots-2 dots-3"
@@ -104,9 +105,7 @@ get_header(); ?>
       "grid-33 grid-72 grid-112 grid-152"
       "grid-34 grid-73 grid-113 grid-153"
       "grid-35 grid-74 grid-114 grid-154"
-      "grid-36 grid-75 grid-115 grid-155";
-
-    justify-content: center;  
+      "grid-36 grid-75 grid-115 grid-155";  
   }
 
   .cre__grid-area-1 { grid-area: grid-1; }
@@ -797,7 +796,7 @@ get_header(); ?>
 
 
   <?php endwhile; // End Flexible Content Loop ?>
-<?php endif; // End Flexible Content if statement?>
+<?php endif; // End Flexible Content if statement ?>
 
 <?php $tab_section_counter++; ?>
 
