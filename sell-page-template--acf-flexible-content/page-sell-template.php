@@ -491,7 +491,7 @@ get_header(); ?>
       </section>
 
 
-    <?php elseif( get_row_layout() == 'icon_blocks_section_sp' ): // ICON BLOCKS 
+    <?php elseif( get_row_layout() == 'icon_blocks_section_sp' ): // Icon Blocks
       $icon_blocks_primary_headline = get_sub_field('icon_blocks_primary_headline_sp');
       $icon_blocks_secondary_headline = get_sub_field('icon_blocks_secondary_headline_sp');
       ?>
@@ -628,6 +628,7 @@ get_header(); ?>
                       
                       if( have_rows('product_packages_value_props_sp') ):
                         while ( have_rows('product_packages_value_props_sp') ) : the_row(); 
+
                           $value_prop_description = get_sub_field('value_prop_description_sp');
                           $value_prop_title = get_sub_field('value_prop_title_sp'); ?>
 
@@ -1014,7 +1015,6 @@ get_header(); ?>
       }
       
     });
-
 
     // // Delivery method dropdown
     // const $deliveryMethodDropdownContainer = jQuery('.cre__delivery-method-dropdown-container');
