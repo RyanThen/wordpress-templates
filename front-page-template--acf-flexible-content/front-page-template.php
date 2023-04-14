@@ -60,11 +60,12 @@ get_header(); ?>
 
   /* Quote Section */
   .quote-section--full-width { margin-top: 40px; padding-block: 125px 50px; background-color: #f8f8f8; }
-  .quote-content-container { width: min(100%, 850px); }
+  .quote-content-container { width: min(100%, 850px); margin-inline: auto; }
   .quote-content { margin: 20px 0 12px 0; color: #13284b; font-size: 2rem; font-weight: 400; }
   .quote-content::before { content: open-quote; position: absolute;  top: 5px; left: 0; right: 0; margin-inline: auto; font-family: math; font-size: 14rem; color: #E05728; text-align: center; line-height: 5px; }
   .quote-content::after { content: no-close-quote; }
   .quote-cite { font-size: 1.8rem; color: #333; }
+  .quote-image { object-fit: cover; border-radius: 50%; width: 170px; height: 170px; }
 
 
   /* Horizontal Rule Block */
@@ -89,7 +90,7 @@ get_header(); ?>
     .hero-button-group .hero-btn { width: 80%; margin-inline: auto; }
     .hero-btn i { display: none; }
 
-    .calendar__single-container { flex-direction: column; align-items: start; padding: 5px;  min-height: 320px; }
+    .calendar__single-container { flex-direction: column; align-items: start; padding: 5px;  min-height: 250px; border: 1px solid darkgrey; }
     .calendar__single-content-container { flex-direction: column; align-items: start; width: 100%; }
     .calendar__single-content-container--inner { width: 100%; }
     
@@ -98,6 +99,7 @@ get_header(); ?>
     
     .calendar__content-row-text { margin: 0; font-size: 1.4rem; }
     .calendar__course-title { margin: 15px 0; font-size: 2.1rem; }
+    .calendar__course-desc { padding-bottom: 20px; }
     
     .calendar__content-rows-container  { padding: 15px 0 0 10px; }
     .cal-btn-container { padding: 0 0 20px 10px; }
@@ -270,16 +272,27 @@ get_header(); ?>
     <?php elseif( get_row_layout() == 'quote_section_fp' ): // Quote Section 
       
       $quote_content = get_sub_field('quote_content_fp');
-      $quote_cite = get_sub_field('quote_cite_fp'); ?>
+      $quote_cite = get_sub_field('quote_cite_fp'); 
+      $quote_image = get_sub_field('quote_image_fp'); ?>
 
       <section class="quote-section--full-width">
-        <div class="container text-center quote-content-container">
-          <?php if( $quote_content ) : ?>
-            <h4 class="quote-content"><?php echo $quote_content; ?></h4>
-          <?php endif;
-          if( $quote_cite ) : ?>
-            <p class="quote-cite"><?php echo $quote_cite; ?></p>
+        <div class="container quote-container">
+
+          <div class="text-center quote-content-container">
+            <?php if( $quote_content ) : ?>
+              <h4 class="quote-content"><?php echo $quote_content; ?></h4>
+            <?php endif;
+            if( $quote_cite ) : ?>
+              <p class="quote-cite"><?php echo $quote_cite; ?></p>
+            <?php endif; ?>
+          </div>
+
+          <?php if( $quote_image ) : ?>
+            <div class="text-center quote-image-container">
+              <img class="quote-image" src="<?php echo $quote_image['url']; ?>" alt="<?php echo $quote_image['alt']; ?>">
+            </div>
           <?php endif; ?>
+
         </div>
       </section>
 
@@ -336,7 +349,6 @@ get_header(); ?>
 
 
     <?php endif; // End Flexible Content Layout Types ?>
-
 
 
   <?php endwhile; // End Flexible Content Loop ?>
