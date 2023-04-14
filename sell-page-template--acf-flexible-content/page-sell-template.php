@@ -768,6 +768,53 @@ get_header(); ?>
       </section>
 
 
+    <?php elseif( get_row_layout() == 'basic_content_section_sp' ): // Basic Content Section (wysiwyg) 
+      
+      $basic_content_block = get_sub_field('basic_content_sp'); ?>
+
+      <section class="basic-content-section">
+        <div class="container">
+          <?php echo $basic_content_block; ?>
+        </div>
+      </section>
+
+
+    <?php elseif( get_row_layout() == 'form_section_sp' ): // RFI Form Section 
+      
+      $form_section_title = get_sub_field('form_section_title_sp');
+      $form_section_subtitle = get_sub_field('form_section_subtitle_sp');
+      $hubspot_form_portal_id = get_sub_field('hubspot_form_portal_id_sp');
+      $hubspot_form_id = get_sub_field('hubspot_form_id_sp'); ?>
+
+      <section class="form-section">
+        <div class="container form-content-container">
+
+          <?php if( $form_section_title || $form_section_subtitle ) : ?>
+            <div class="text-center form-headline-group">
+              <?php if( $form_section_title ) : ?>
+                <h3><?php echo $form_section_title; ?></h3>
+              <?php endif;
+              if( $form_section_subtitle ) : ?>
+                <p><?php echo $form_section_subtitle; ?></p>
+              <?php endif; ?>
+            </div>
+          <?php endif; ?>
+
+          <div class="form-container">
+            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+            <script>
+              hbspt.forms.create({
+                region: "na1",
+                portalId: "<?php echo $hubspot_form_portal_id; ?>",
+                formId: "<?php echo $hubspot_form_id; ?>"
+              });
+            </script>
+          </div>
+
+        </div>
+      </section>
+
+
     <?php elseif( get_row_layout() == 'horizontal_rule_block_sp' ): // Horizontal Rule
       
       $horizontal_rule_version = get_sub_field( 'horizontal_rule_sp' ); ?>
