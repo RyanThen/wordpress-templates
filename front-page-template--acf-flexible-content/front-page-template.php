@@ -224,7 +224,7 @@ get_header(); ?>
 
                             <div class="calendar__content-row calendar__content-row-2">
                               <?php if( $single_entry_title ) : ?>
-                                <h4 class="calendar__course-title"><?php echo $single_entry_title; ?></h4>
+                                <h4 class="calendar__course-title" <?php if( !$single_entry_desc ) echo "style='margin-bottom: 0'" ?>><?php echo $single_entry_title; ?></h4>
                               <?php endif; 
                               if( $single_entry_desc ) : ?>
                                 <p class="calendar__course-desc"><?php echo $single_entry_desc; ?></p>
