@@ -65,6 +65,7 @@ get_header(); ?>
   .quote-content::before { content: open-quote; position: absolute;  top: 5px; left: 0; right: 0; margin-inline: auto; font-family: math; font-size: 14rem; color: #E05728; text-align: center; line-height: 5px; }
   .quote-content::after { content: no-close-quote; }
   .quote-cite { font-size: 1.8rem; color: #333; }
+  .quote-image-container { padding-bottom: 10px; }
   .quote-image { object-fit: cover; border-radius: 50%; width: 170px; height: 170px; }
 
 
